@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="en-US" demote-non-dropping-particle="sort-only" page-range-format="expanded">
+  <info>
+    <title>Clinical and Experimental Optometry (custom, 2026)</title>
+    <title-short>Clin Exp Optom custom</title-short>
+    <id>http://www.zotero.org/styles/clinical-and-experimental-optometry-custom-2026</id>
+    <link href="http://www.zotero.org/styles/clinical-and-experimental-optometry-custom-2026" rel="self"/>
+    <category citation-format="numeric"/>
+    <category field="medicine"/>
+    <summary>Custom numeric style based on the journal instructions: first three authors then et al.; MEDLINE journal abbreviations; no issue number; full page ranges.</summary>
+    <updated>2026-10-25T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="author">
+    <names variable="author" et-al-min="4" et-al-use-first="3">
+      <name name-as-sort-order="all" sort-separator=" " initialize-with="" delimiter=", " delimiter-precedes-last="never"/>
+      <et-al font-style="italic"/>
+    </names>
+  </macro>
+  <macro name="title">
+    <text variable="title" text-case="sentence"/>
+  </macro>
+  <macro name="journal">
+    <text variable="container-title" form="short" font-style="italic"/>
+  </macro>
+  <macro name="date-volume-pages">
+    <group delimiter=";">
+      <date variable="issued"><date-part name="year"/></date>
+      <group delimiter=":">
+        <text variable="volume"/>
+        <text variable="page"/>
+      </group>
+    </group>
+  </macro>
+  <citation collapse="citation-number">
+    <layout prefix="" suffix="" vertical-align="sup">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography hanging-indent="true" et-al-min="4" et-al-use-first="3">
+    <sort><key variable="citation-number"/></sort>
+    <layout suffix=".">
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="title"/>
+        <group delimiter=" ">
+          <text macro="journal"/>
+          <text macro="date-volume-pages"/>
+        </group>
+      </group>
+    </layout>
+  </bibliography>
+</style>
